@@ -2,13 +2,13 @@ name: COntinuos Integration
 
 on: 
     push:
-        branches: ["*"]  
+        branches: ["main"]  
 
 jobs: 
     build:
         runs-on: ubuntu-latest 
         steps:
-            - name: Checkout  code
+            - name: Checkout code
               uses: actions/checkout@v4
 
             - name: Build docker image             
@@ -17,7 +17,7 @@ jobs:
                context: ./scr
                file: src./Dockerfile
                push: true 
-               tags:
+               tags: |
                 haryston/noticias:v1
                 haryston/noticias:latest
                   
