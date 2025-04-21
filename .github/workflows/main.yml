@@ -15,7 +15,7 @@ jobs:
               uses: docker/login-action@v3.4.0
               with:
                 username: ${{secrets.DOCKER_HUB_USERNAME}}
-                password: ${{secrets.DOCKER_HUB_TOKEN}}
+                password: ${{secrets.DOCKER_HUB_TOKEN }}
 
             - name: Build docker image             
               uses: docker/build-push-action@v6.15.0
@@ -24,7 +24,7 @@ jobs:
                file: ./Dockerfile
                push: true 
                tags: |
-                haryston/noticias:${{github.run.number}}
+                haryston/noticias:v1
                 haryston/noticias:latest
             
                   
