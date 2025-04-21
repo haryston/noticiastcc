@@ -15,7 +15,7 @@ jobs:
               uses: docker/build-push-action@v6.15.0
               with: 
                context: .
-               file: ./src/Dockerfile
+               file: ./Dockerfile
                push: true 
                tags: |
                 haryston/noticias:v1
