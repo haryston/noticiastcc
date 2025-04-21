@@ -24,7 +24,7 @@ jobs:
                file: ./Dockerfile
                push: true 
                tags: |
-                haryston/noticias:v1
+                haryston/noticias:${{github.run.number}}
                 haryston/noticias:latest
             
                   
