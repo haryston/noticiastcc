@@ -14,7 +14,7 @@ jobs:
             - name: Build docker image             
               uses: docker/build-push-action@v6.15.0
               with: 
-               context: ./src
+               context: .
                file: ./src/Dockerfile
                push: true 
                tags: |
