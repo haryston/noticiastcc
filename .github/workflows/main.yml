@@ -1,4 +1,4 @@
-name: COntinuos Integration
+name: Continuos Integration
 
 on: 
     push:
@@ -15,7 +15,7 @@ jobs:
               uses: docker/build-push-action@v6.15.0
               with: 
                context: ./src
-               file: ./src./Dockerfile
+               file: ./src/Dockerfile
                push: true 
                tags: |
                 haryston/noticias:v1
