@@ -28,6 +28,13 @@ jobs:
                tags: |
                 haryston/noticias:${{github.run_number}}
                 haryston/noticias:latest
-   
+  CD:
+    runs-on: ubuntu-latest                                                                       
+
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
                   
 
