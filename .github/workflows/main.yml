@@ -42,8 +42,10 @@ jobs:
       - name: Deploy do cluster kubernetes
         uses: Azure/k8s-deploy@v1
         with: 
-            images: haryston/noticiastcc
+            images: haryston/noticiastcc:${{github.run_number}}
             manifest: |
               K8S/deployment.yaml
+        
+          
             
 
