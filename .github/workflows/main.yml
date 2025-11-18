@@ -39,12 +39,7 @@ jobs:
         with: 
             method: kubeconfig
             kubeconfig: ${{secrets.K8S}}
-      - name: Deploy do cluster kubernetes
-        uses: Azure/k8s-deploy@v4
-        with: 
-            namespace: default
-            images: haryston/noticiastcc:${{github.run_number}}
-            manifests: K8S/deployment.yaml
+      
         
           
             
