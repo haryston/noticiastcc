@@ -27,7 +27,14 @@ jobs:
         with:
           username: ${{  secrets.DOCKER_HUB_USERNAME  }}
           password: ${{  secrets.DOCKER_HUB_TOKEN   }}
-
+     
+      - name: Docker Metadata action
+      - id: metadata
+        uses: docker/metadata-action@v5.9.0
+        with:
+         images: haryston/noticiastcc
+         tags: ${{ steps.tagger.outputs.new_tag }
+         
       - name: Construção da imagem docker            
         uses: docker/build-push-action@v6.15.0
         with: 
@@ -35,8 +42,17 @@ jobs:
                file: ./Dockerfile
                push: true 
                tags: |
-                haryston/noticiastcc:${{github.run_number}}
-                haryston/noticiastcc:latest
+                   tags: ${{ steps.metadata.outputs.tags }}
+                   labels: ${{ steps.metadata.outputs.labels }}
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v6.18.0
+        with:
+            context: .
+            file: ./Dockerfile
+            push: true
+            tags: haryston/noticiastcc
+            
  # CD:
   #  runs-on: ubuntu-latest                                                                       
    # needs: [CI]
