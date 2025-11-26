@@ -59,9 +59,9 @@ jobs:
             host: ${{secrets.SSH_HOSTNAME}}
             username: ${{secrets.SSH_USERNAME}}
             key: ${{secrets.SSH_PRIVATE}}
-            script: |
-                sudo systemctl restart noticiastcc.service
-                exit
+          #  script: |
+           #     sudo systemctl restart noticiastcc.service
+            #    exit
       #- name: definindo o contexto
        # uses: Azure/k8s-set-context@v3.0
         #with: 
