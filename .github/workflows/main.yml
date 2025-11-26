@@ -57,10 +57,13 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@v1.0.0
         with:
-            host: ${{secrets.SSH_HOST}}
+            host: ${{secrets.SSH_HOSTNAME}}
             username: ${{secrets.SSH_USERNAME}}
             key: ${{secrets.SSH_PRIVATE}}
-           
+            port: 22
+            script: |
+                sudo systemctl restart noticiastcc.service
+                exit
       #- name: definindo o contexto
        # uses: Azure/k8s-set-context@v3.0
         #with: 
