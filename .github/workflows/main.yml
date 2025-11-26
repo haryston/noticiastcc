@@ -19,8 +19,7 @@ jobs:
     #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     #      WITH_V: false
       
-     # - name: New version
-    #  run: yarn version -i ${{ steps.tagger.outputs.new_tag }}
+     
         
       - name: Login no Docker Hub
         uses: docker/login-action@v3.4.0
