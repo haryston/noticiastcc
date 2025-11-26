@@ -5,10 +5,10 @@ const strToBool = (value) => {
   return value === 'true';
 };
 
-const DB_DATABASE = process.env.DB_DATABASE || "noticiasdb";
-const DB_USERNAME = process.env.DB_USERNAME || "noticias";
-const DB_PASSWORD =  "pg1234";
-const DB_HOST = process.env.DB_HOST || "localhost";
+const DB_DATABASE = process.env.DB_DATABASE || "postgres";
+const DB_USERNAME = process.env.DB_USERNAME || "postgres.kkqnlqpyzpssijwpctbh";
+const DB_PASSWORD =  "y56oc0mZsysEWG4U";
+const DB_HOST = process.env.DB_HOST || "aws-1-sa-east-1.pooler.supabase.com";
 const DB_PORT = parseInt(process.env.DB_PORT, 10) || 5432; 
 const DB_SSL_REQUIRE =  strToBool(process.env.DB_SSL_REQUIRE) || false;
 
