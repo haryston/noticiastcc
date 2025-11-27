@@ -57,7 +57,7 @@ jobs:
         uses: appleboy/ssh-action@v1.2.3
         with:
             host: ${{ secrets.SSH_HOSTNAME }}
-            username: ${{ secrets.SSH_USER }}
+            username: ${{ secrets.SSH_USERNAME }}
             key: ${{ secrets.SSH_PRIVATE }}
             script: |
                 sudo systemctl restart noticiastcc.service
