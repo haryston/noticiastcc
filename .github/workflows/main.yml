@@ -56,9 +56,9 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-            host: ${{ secrets.SSH_HOSTNAME }}
-            username: ${{ secrets.SSH_USERNAME }}
-            key: ${{ secrets.SSH_PRIVATE }}
+            host: ${{secrets.SSH_HOSTNAME}}
+            username: ${{secrets.SSH_USERNAME}}
+            key: ${{secrets.SSH_PRIVATE}}
             script: |
                 sudo systemctl restart noticiastcc.service
                 exit
