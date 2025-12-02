@@ -26,13 +26,7 @@ jobs:
         with:
           username: ${{  secrets.DOCKER_HUB_USERNAME  }}
           password: ${{  secrets.DOCKER_HUB_TOKEN   }}
-     
-     # - name: Docker Metadata action
-     #   id: metadata
-     #   uses: docker/metadata-action@v5.9.0
-     #   with:
-     #     images: haryston/noticiastcc
-     #    tags: ${{ steps.tagger.outputs.new_tag }}          
+              
          
 
       - name: push latest 
@@ -56,17 +50,13 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-            host: ${{secrets.SSH_HOSTNAME}}
-            username: ${{secrets.SSH_USERNAME}}
-            key: ${{secrets.SSH_PRIVATE}}
+            host: ${{  secrets.SSH_HOSTNAME  }}
+            username: ${{  secrets.SSH_USERNAME  }}
+            key: ${{  secrets.SSH_PRIVATE }}
             script: |
                 sudo systemctl restart noticiastcc.service
                 exit
-      #- name: definindo o contexto
-       # uses: Azure/k8s-set-context@v3.0
-        #with: 
-         #   method: kubeconfig
-          #  kubeconfig: ${{secrets.K8S}}
+      
       
         
           
