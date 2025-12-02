@@ -56,6 +56,17 @@ jobs:
             script: |
                 sudo systemctl restart noticiastcc.service
                 exit
+                port: 22
+                timeout: 30s
+                script_stop: false
+                debug: true
+                script: |
+                  echo "=== DEBUG INFO ==="
+                  whoami
+                  pwd
+                  ls -la
+                  echo "=== Teste simples ==="
+                  echo "Funcionou!"
       
       
         
